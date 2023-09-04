@@ -16,7 +16,6 @@ pipeline {
 
   stages {
     // This step should not normally be used in your script. Consult the inline help for details.
-    stages {
       stage('maven') {
         withDockerContainer('maven') {  
             steps {
@@ -25,6 +24,5 @@ pipeline {
             }
           }
         }
-    }
   }
 }
