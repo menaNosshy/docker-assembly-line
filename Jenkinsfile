@@ -16,8 +16,8 @@ pipeline {
 
   stages {
     // This step should not normally be used in your script. Consult the inline help for details.
-    withDockerContainer('maven') {
-      stages {
+    stages {
+      withDockerContainer('maven') {
           stage('maven') {
             steps {
               sh "mvn -version"
