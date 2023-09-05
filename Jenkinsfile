@@ -1,15 +1,32 @@
 pipeline {
     agent {
-        docker { image 'node:18.17.1-alpine3.18' }
+        any
     }
     stages {
-        stage('Test') {
+        stage('Build Docker Image') {
             steps {
-                sh 'node --version'
+                script {
+                    docker.build('my-docker-image:latest')
+                }
             }
         }
     }
 }
+
+
+
+// pipeline {
+//     agent {
+//         docker { image 'node:18.17.1-alpine3.18' }
+//     }
+//     stages {
+//         stage('Test') {
+//             steps {
+//                 sh 'node --version'
+//             }
+//         }
+//     }
+// }
 
 
 
