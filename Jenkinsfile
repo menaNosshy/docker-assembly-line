@@ -1,15 +1,27 @@
-pipeline {
-  agent { docker "maven" }
-
-  stages {
-    stage('maven') {
-      steps {
-        sh "mvn -version"
-        sh "java -version"
-      }
+stages {
+    stage('Test Docker') {
+        steps {
+            sh "docker --version"
+        }
     }
-  }
+    // Other stages in your pipeline
 }
+
+
+
+
+// pipeline {
+//   agent { docker "maven" }
+
+//   stages {
+//     stage('maven') {
+//       steps {
+//         sh "mvn -version"
+//         sh "java -version"
+//       }
+//     }
+//   }
+// }
 
 // pipeline {
 //   agent { docker "maven" }
