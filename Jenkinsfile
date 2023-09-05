@@ -1,15 +1,35 @@
 pipeline {
     agent any
+
     stages {
-        stage('Build Docker Image') {
+        stage('Run Command on Jenkins Agent') {
             steps {
-                script {
-                    docker.build('my-docker-image:latest')
-                }
+                // Use the sh step to run a shell command on the agent
+                sh """
+                    # Your shell command here
+                    echo "Hello, world!"
+                    # You can run multiple commands by separating them with newlines
+                    ls -l
             }
         }
     }
 }
+
+
+
+
+// pipeline {
+//     agent any
+//     stages {
+//         stage('Build Docker Image') {
+//             steps {
+//                 script {
+//                     docker.build('my-docker-image:latest')
+//                 }
+//             }
+//         }
+//     }
+// }
 
 
 
